@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
+//import logo from "./logo.svg";
 import "./App.css";
-import { PureCompo, PureCompoProps } from "./componants/PureComp.js";
-import StateCompo from "./componants/StateComp";
-import CompoCycleDeVie from "./componants/CompoCycleDeVie";
+//import { PureCompo, PureCompoProps } from "./componants/PureComp.js";
+//import StateCompo from "./componants/StateComp";
+//import CompoCycleDeVie from "./componants/CompoCycleDeVie";
 import FilterableJeuxTable from "./Jeux/FilterableJeuxTable";
 
 class App extends Component {
@@ -23,7 +23,7 @@ class App extends Component {
   };
 
   render() {
-    let mesLabel = [];
+   // let mesLabel = [];
     // mesLabel.push("toto");
     // mesLabel.push("truc");
     // mesLabel.push("much");
@@ -38,17 +38,24 @@ class App extends Component {
       quantité: 15,
     });
     JEUX.push({
-      category: "RÔLE",
+      category: "FPS",
+      price: "12€",
+      stocked: false,
+      name: "Call of Duty",
+      quantité: 0,
+    });
+    JEUX.push({
+      category: "RPG",
       price: "15€",
       stocked: true,
       name: "Final Fantasy 7",
       quantité: 2,
     });
     JEUX.push({
-      category: "FPS",
-      price: "12€",
+      category: "RPG",
+      price: "23€",
       stocked: false,
-      name: "Call of Duty",
+      name: "Zelda",
       quantité: 0,
     });
     JEUX.push({
@@ -57,6 +64,13 @@ class App extends Component {
       stocked: true,
       name: "Gran Turismo",
       quantité: 45,
+    });
+    JEUX.push({
+      category: "COURSE",
+      price: "28€",
+      stocked: true,
+      name: "Fast and Furious",
+      quantité: 0,
     });
     JEUX.push({
       category: "AVENTURE",
@@ -74,9 +88,9 @@ class App extends Component {
     });
 
     return (
-      <div className="App">
+      <div className = "App" >
         <header className="App-header">
-          <FilterableJeuxTable jeux={JEUX} />
+          <FilterableJeuxTable jeux = {JEUX} />
 
           {/* Cycle de vie */}
           {/* <CompoCycleDeVie></CompoCycleDeVie> */}
@@ -90,19 +104,19 @@ class App extends Component {
             ></StateCompo>
           ))} */}
 
-          <StateCompo
+          {/* <StateCompo
             label={"Yan"}
             onInputChange={this.onInputChange}
-          ></StateCompo>
+          ></StateCompo>*/}
           {/* Ternaire */}
-          {this.state.stateAppNom ? (
-            <PureCompoProps label={this.state.stateAppNom} age={43} />
+          {/* {this.state.stateAppNom ? (
+            <PureCompoProps label={this.state.stateAppNom} age={43} /> 
           ) : (
             <div></div>
-          )}
+          )} */}
           {/* {COND ? CA : SINON CECI} */}
 
-          <PureCompo />
+          {/* <PureCompo /> */}
 
           {/* <img src={logo} className="App-logo" alt="logo" /> */}
         </header>
@@ -115,3 +129,4 @@ export default App;
 
 //! lecon 10c, 21min cheminement du state
 //! lecon 10e,(mise en place et explication de l'app) 40 min env bouclé sur un compo
+
